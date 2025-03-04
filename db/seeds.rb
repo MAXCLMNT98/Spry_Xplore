@@ -16,3 +16,11 @@ Van.create(fuel: 'diesel', model: 'Renault Partner', price: 120, surface: '15', 
 puts 'created a van'
 Van.create(fuel: 'hybrid', model: 'Ford Transit', price: 150, surface: '15', user_id: 1)
 puts 'created a van'
+
+
+Booking.create()
+puts 'created a booking'
+Booking.create(fuel: 'diesel', model: 'Renault Partner', price: 120, surface: '15', user_id: 1)
+puts 'created a booking'
+Booking.create(fuel: 'hybrid', model: 'Ford Transit', price: 150, surface: '15', user_id: 1)
+puts 'created a booking'
