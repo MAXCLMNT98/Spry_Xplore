@@ -1,0 +1,15 @@
+<%= simple_form_for(van) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :fuel, prompt: "Select a fuel type", collection: Van::CATEGORIES %>
+    <%= f.input :model, placeholder: "Roadsurfer, Volkswagen Crafter..." %>
+    <%= f.input :price, label: "Daily price (in €)", placeholder: "Indicate your price per day", input_html: { min: 0 } %>
+    <%= f.input :surface, label: "Surface (in m²)", placeholder: "Indicate the surface" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-primary"%>
+  </div>
+<% end %>
