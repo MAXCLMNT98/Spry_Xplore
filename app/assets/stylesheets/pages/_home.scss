@@ -33,3 +33,30 @@
   background: #3d3d3d;
   color: white;
 }
+
+.row {
+  margin-top: 1rem;
+  padding: 35px 0;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 1rem;
+  text-align: center !important;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex-wrap: wrap;
+  border-radius: 20px;
+  box-shadow: 0px 5px 7px 5px #D5D5D5;
+  margin: 30px;
+}
+
+.card-img-top {
+  height: 12rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
