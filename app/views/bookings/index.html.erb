@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10">
+      <h1>My bookings</h1>
+      <ul class="list-group mb-3">
+        <% @bookings.each do |booking| %>
+          <li class="list-group-item">
+            <strong><%= booking.van.model %></strong><br>
+            Start date: <%= booking.start_date %><br>
+            End date: <%= booking.end_date %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

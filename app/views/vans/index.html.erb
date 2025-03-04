@@ -1,14 +1,15 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
       <h1>All vans</h1>
-      <ul class="list-group mb-3">
+      <div id= "cards" class="row d-flex justify-content-center align-items-center">
         <% @vans.each do |van| %>
-          <li class="list-group-item">
-            <%= link_to van.model, van_path(van) %>
-          </li>
+          <div class="list-group-item card col-4" style="width: 23rem;">
+          <img src="https://resize.elle.fr/article/var/plain_site/storage/images/deco/news-tendances/voyage-en-van-deco-interieure-location-itineraires-notre-guide/96957443-1-fre-FR/Voyage-en-van-deco-interieure-location-itineraires-notre-guide.jpg" class="card-img-top" alt="van aménagé">
+          <div class="card-body">
+          <h5 class="card-title"><strong> <%= link_to van.model, van_path(van) %></strong></h5>
+        </div>
+        </div>
         <% end %>
-      </ul>
       <%# <%= link_to "Add a new van", new_van_path, class: 'btn btn-primary' %>
     </div>
   </div>

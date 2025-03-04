@@ -8,11 +8,27 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-Van.destroy_all
-puts 'destroyed all vans'
+
+
 Van.create(fuel: 'electric', model: 'VW California Ocean', price: 170, surface: '15', user_id: 1)
 puts 'created a van'
+
 Van.create(fuel: 'diesel', model: 'Renault Partner', price: 120, surface: '15', user_id: 1)
 puts 'created a van'
+
 Van.create(fuel: 'hybrid', model: 'Ford Transit', price: 150, surface: '15', user_id: 1)
 puts 'created a van'
+
+Booking.destroy_all
+puts 'destroyed all bookings'
+
+Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 8)
+puts 'created a booking'
+
+Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 8)
+puts 'created a booking'
+
+Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 8)
+puts 'created a booking'
+
+puts 'Youhooou'
