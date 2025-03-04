@@ -15,15 +15,19 @@ puts 'created a van'
 Van.create(fuel: 'diesel', model: 'Renault Partner', price: 120, surface: '15', user_id: 1, image_url: 'https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/van1_bdpjg3.jpg')
 puts 'created a van'
 Van.create(fuel: 'hybrid', model: 'Ford Transit', price: 150, surface: '15', user_id: 1, image_url: 'https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/ford_dkgrli.webp')
+
 puts 'created a van'
 
 Booking.destroy_all
 puts 'destroyed all bookings'
-Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 2)
+
+Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 8)
 puts 'created a booking'
-Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 2)
+
+Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 8)
 puts 'created a booking'
-Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 2)
+
+Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 8)
 puts 'created a booking'
 
 puts 'Youhooou'
