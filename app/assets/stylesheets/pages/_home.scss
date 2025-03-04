@@ -4,6 +4,7 @@
   background-position: center;
   padding: 150px 0;
   border-radius: 1rem;
+  margin-bottom: 2rem;
 }
 .banner h1 {
   margin: 0;
@@ -73,4 +74,12 @@
  #description {
   margin-top: 12px;
   text-align: center;
+ }
+
+ .carousel-inner {
+  margin-top: 2rem;
+  height: 40rem;
+  width: 100%;
+  border-radius: 20px;
+  object-position: center;
  }
