@@ -36,8 +36,9 @@
 
 .row {
   margin-top: 1rem;
-  padding: 150px 0;
+  padding: 35px 0;
   display: flex;
   flex-wrap: wrap;
-  background-color: aquamarine;
+  border-radius: 1rem;
+  text-align: center !important;
 }
