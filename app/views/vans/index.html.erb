@@ -5,7 +5,7 @@
       <ul class="list-group mb-3">
         <% @vans.each do |van| %>
           <li class="list-group-item">
-            <%= van.model %>
+            <%= link_to van.model, van_path(van) %>
           </li>
         <% end %>
       </ul>
