@@ -4,8 +4,8 @@
   background-position: center;
   padding: 150px 0;
   border-radius: 1rem;
+  margin-bottom: 2rem;
 }
-
 .banner h1 {
   margin: 0;
   color: white;
@@ -13,14 +13,12 @@
   font-size: 32px;
   font-weight: bold;
 }
-
 .banner p {
   font-size: 20px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
-
 .btn-flat {
   color: white;
   padding: 8px 24px;
@@ -28,12 +26,10 @@
   background: #000000;
   transition: background 0.3s ease;
 }
-
 .btn-flat:hover {
-  background: #3d3d3d;
+  background: #3D3D3D;
   color: white;
 }
-
 .row {
   margin-top: 1rem;
   padding: 35px 0;
@@ -42,18 +38,31 @@
   border-radius: 1rem;
   text-align: center !important;
 }
-
 .cards {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 20px;
 }
-
-.card {
+.card-home {
   flex-wrap: wrap;
   border-radius: 20px;
   box-shadow: 0px 5px 7px 5px #D5D5D5;
   margin: 30px;
+  padding: 0;
+}
+
+.card-body {
+  height: 140px;
+  padding: 0px 14px;
+}
+
+.card-title {
+  margin: 8px 0;
+}
+
+.card-home:hover {
+  box-shadow: 0px 5px 7px 5px #7e7e7e;
+  transition: 0.3s ease;
 }
 
 .card-img-top {
@@ -65,4 +74,12 @@
  #description {
   margin-top: 12px;
   text-align: center;
+ }
+
+ .carousel-inner {
+  margin-top: 2rem;
+  height: 40rem;
+  width: 100%;
+  border-radius: 20px;
+  object-position: center;
  }

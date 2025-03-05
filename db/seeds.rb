@@ -8,15 +8,14 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-
-
-Van.create(fuel: 'electric', model: 'VW California Ocean', price: 170, surface: '15', user_id: 1)
+# Van.destroy_all
+# puts 'destroyed all vans'
+Van.create(fuel: 'electric', model: 'VW California Ocean', price: 170, surface: '15', user_id: 1, image_url: 'https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/vw_hdryrk.webp')
 puts 'created a van'
-
-Van.create(fuel: 'diesel', model: 'Renault Partner', price: 120, surface: '15', user_id: 1)
+Van.create(fuel: 'diesel', model: 'Renault Partner', price: 120, surface: '15', user_id: 1, image_url: 'https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/van1_bdpjg3.jpg')
 puts 'created a van'
+Van.create(fuel: 'hybrid', model: 'Ford Transit', price: 150, surface: '15', user_id: 1, image_url: 'https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/ford_dkgrli.webp')
 
-Van.create(fuel: 'hybrid', model: 'Ford Transit', price: 150, surface: '15', user_id: 1)
 puts 'created a van'
 
 Booking.destroy_all

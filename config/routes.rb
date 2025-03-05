@@ -9,16 +9,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :vans, only: %i[index new create show]
-<<<<<<< Updated upstream
-  resources :bookings, only: %i[index new create]
-=======
-
 
   resources :vans do
-    resources :bookings, only: [:new, :create]
+   resources :bookings, only: [:new, :create]
   end
-
+  
   resources :bookings, only: :index
->>>>>>> Stashed changes
-end
+  
+  end
