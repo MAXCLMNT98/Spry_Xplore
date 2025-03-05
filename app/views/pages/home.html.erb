@@ -3,26 +3,26 @@
     <div class="container">
       <h1>Bienvenue sur <strong>Spry® Xplore</strong></h1>
       <p>Changez la votre vision du voyage, et partez pour l'aventure !</p>
-      <%= link_to "Reserver", vans_path, class: "btn btn-flat" %>
+      <%= link_to "Reserver un van", vans_path, class: "btn btn-flat" %>
+      <%= link_to "Louer mon van", new_van_path, class: "btn btn-flat" %>
     </div>
   </div>
 
   <div id= "description">
     <h2><strong>Nos coups de coeur 💘</strong></h2>
-     <%= link_to "Add a new van", new_van_path, class: "btn btn-primary mt-3" %>
   </div>
 
   <div id= "carroussel container">
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="https://media.volkswagen.fr/wp-content/uploads/2023/08/c6ee0d2e594574a12c5df51319fdb95c-2098x1180.jpg.webp" class="d-block w-100" style="object-position: center;" alt="van vw">
+          <img src="https://media.volkswagen.fr/wp-content/uploads/2023/08/c6ee0d2e594574a12c5df51319fdb95c-2098x1180.jpg.webp" class="d-block w-100 carousel-item-photo" alt="van vw">
         </div>
         <div class="carousel-item">
-          <img src="https://cdn.motor1.com/images/mgl/P3Gkjy/s1/mercedes-benz-eqv-camper-side-angle-top-up.jpg" style="object-position: center;" class="d-block w-100" alt="van mercedes">
+          <img src="https://cdn.motor1.com/images/mgl/P3Gkjy/s1/mercedes-benz-eqv-camper-side-angle-top-up.jpg" class="d-block w-100 carousel-item-photo" alt="van mercedes">
         </div>
         <div class="carousel-item">
-          <img src="https://www.lemondeducampingcar.fr/wp/wp-content/uploads/2020/12/mybushotel-leon-bus-scolaire-usa.jpg" style="object-position: center;" class="d-block w-100" alt="van chevrolet">
+          <img src="https://www.lemondeducampingcar.fr/wp/wp-content/uploads/2020/12/mybushotel-leon-bus-scolaire-usa.jpg" class="d-block w-100 carousel-item-photo" alt="van chevrolet">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -81,6 +81,5 @@
           <p class="card-text">Réservez en moins de 5 minutes votre van avec notre page de réservation pensée pour vous faciliter la vie.</p>
         </div>
     </div>
-
   </div>
 </div>
