@@ -84,7 +84,13 @@
  }
 
  .carousel-item-photo {
-    object-fit: cover;
-    height: 640px;
-    object-position: center;
+  object-fit: cover;
+  height: 640px;
+  object-position: center;
+ }
+
+ .carousel-caption {
+  background: #3D3D3D;
+  height: 4rem;
+  width: 2rem;
  }
