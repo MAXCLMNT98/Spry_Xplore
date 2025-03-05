@@ -1,18 +1,31 @@
 <div class="container">
   <div class="row">
-    <h1>Tous les vans</h1>
-      <div id= "cards" class="row d-flex justify-content-center align-items-center">
-        <% @vans.each do |van| %>
-          <div class="card-home col-4 " style="width: 23rem;">
-            <img src="<%=van.image_url%>" class="card-img-top" alt="van aménagé">
-            <%= link_to van_path(van) do %>
-              <div class="card-body">
-                <h5 class="card-title"><strong> <%= van.model %></strong></h5>
-                <p class="card-text">Adresse : <%= van.address %></p>
-              </div>
+      <h1>Tous les vans</h1>
+        <div id= "cards" class="row d-flex justify-content-center align-items-center">
+          <% @vans.each do |van| %>
+            <div class="card-home col-4 " style="width: 23rem;">
+            <% if van.photo.attached? %>
+              <%= cl_image_tag van.photo.key, class: "card-img-top"%>
+            <% else %>
+              <img src="https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/vw_hdryrk.webp" class= "card-img-top" alt="van">
             <% end %>
-          </div>
-        <% end %>
-      </div>
+              <%= link_to van_path(van) do %>
+                <div class="card-body">
+                  <h5 class="card-title"><strong> <%= van.model %></strong></h5>
+                  <p class="card-text">Adresse : <%= van.address %></p>
+                </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div data-controller="toggle" class="mt-5 map-container">
+  <button class="btn btn-flat" data-action="click->toggle#fire"><span>Voir la carte</span></button>
+      <div style="height: 600px" id="map-container" data-toggle-target="togglableElement"class="d-none"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
   </div>
 </div>
