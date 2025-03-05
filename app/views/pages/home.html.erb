@@ -3,13 +3,13 @@
     <div class="container">
       <h1>Bienvenue sur <strong>Spry® Xplore</strong></h1>
       <p>Changez la votre vision du voyage, et partez pour l'aventure !</p>
-      <a class="btn btn-flat" href="#">Reserver</a>
+      <%= link_to "Reserver", vans_path, class: "btn btn-flat" %>
     </div>
   </div>
 
   <div id= "description">
     <h2><strong>Nos coups de coeur 💘</strong></h2>
-    <%# <%= link_to "Add a new van", new_van_path, class: "btn btn-primary mt-3" %>
+     <%= link_to "Add a new van", new_van_path, class: "btn btn-primary mt-3" %>
   </div>
 
   <div id= "carroussel container">
