@@ -1,13 +1,14 @@
 <div class="container">
 <h2><%= @van.model%></h2>
+
 <% if @van.photo.attached? %>
   <%= cl_image_tag @van.photo.key, width: 400, height: 300, crop: :fill%>
 <% else %>
   <img src="https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/vw_hdryrk.webp" width="auto" height="auto">
 <% end %>
-<p>Fuel: <%= @van.fuel %></p>
-<p>Price: <%= @van.price %></p>
-<p><%= @van.surface %></p>
+<p>Type : <%= @van.fuel %></p>
+<p>Prix : <%= @van.price %>€</p>
+<p>Surface : <%= @van.surface %>m²</p>
 
 <%= link_to "Réserver ce van",  new_van_booking_path(@van), class: "btn btn-flat" %>
 

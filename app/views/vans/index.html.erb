@@ -19,4 +19,13 @@
       <% end %>
     </div>
   </div>
+
+  <div data-controller="toggle" class="mt-5 map-container">
+  <button class="btn btn-flat" data-action="click->toggle#fire"><span>Voir la carte</span></button>
+      <div style="height: 600px" id="map-container" data-toggle-target="togglableElement"class="d-none"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+  </div>
 </div>
