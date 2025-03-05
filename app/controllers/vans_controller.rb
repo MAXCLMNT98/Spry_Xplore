@@ -12,6 +12,9 @@ class VansController < ApplicationController
 
   def show
     @van = Van.find(params[:id])
+    if @van.nil?
+      redirect_to vans_path, alert: "Van non trouvé."
+    end
   end
 
   def new

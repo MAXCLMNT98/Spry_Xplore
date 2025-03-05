@@ -1,5 +1,5 @@
 class Van < ApplicationRecord
-  CATEGORIES = ["gasoline", "diesel", "hybrid", "electric", "hydrogen"]
+  CATEGORIES = ["Essence", "Diesel", "Hybride", "Electrique", "Hydrogène"]
   belongs_to :user
   has_one_attached :photo
 
