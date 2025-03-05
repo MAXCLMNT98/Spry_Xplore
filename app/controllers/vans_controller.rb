@@ -12,6 +12,9 @@ class VansController < ApplicationController
 
   def show
     @van = Van.find(params[:id])
+    if @van.nil?
+      redirect_to vans_path, alert: "Van non trouvé."
+    end
   end
 
   def new
@@ -22,7 +25,7 @@ class VansController < ApplicationController
     @van = Van.new(van_params)
     @van.user = current_user
     if @van.save
-      redirect_to "/", notice: "Votre van a été créé"
+      redirect_to vans_path, notice: "Votre van a bien été créé"
     else
       render :new, status: :unprocessable_entity
     end
