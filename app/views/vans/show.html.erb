@@ -1,9 +1,10 @@
 <div class="container">
 <h2><%= @van.model%></h2>
+<%= cl_image_tag @van.photo.key, height: 300, width: 400, crop: :fill %>
 <p>Fuel: <%= @van.fuel %></p>
 <p>Price: <%= @van.price %></p>
 <p><%= @van.surface %></p>
-<%= link_to "reserver ce van",  new_van_booking_path(@van), class: "btn btn-flat" %>
+<%= link_to "Book this van",  new_van_booking_path(@van), class: "btn btn-flat" %>
 
 <%= link_to "Back to all vans", vans_path %>
 </div>
