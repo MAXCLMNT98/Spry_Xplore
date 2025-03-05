@@ -15,9 +15,9 @@
   <div id= "carroussel container">
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-      <% @vans.each_with_index do |van, index| %>
-        <%= render "vans/carousel-van", van: van, index: index %>
-      <% end %>
+        <% @vans.each_with_index do |van, index| %>
+          <%= render "vans/carousel-van", van: van, index: index %>
+        <% end %>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
