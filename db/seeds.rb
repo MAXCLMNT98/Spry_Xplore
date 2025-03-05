@@ -8,26 +8,26 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-# Van.destroy_all
-# puts 'destroyed all vans'
-Van.create(fuel: 'electric', model: 'VW California Ocean', price: 170, surface: '15', user_id: 1, image_url: 'https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/vw_hdryrk.webp')
-puts 'created a van'
-Van.create(fuel: 'diesel', model: 'Renault Partner', price: 120, surface: '15', user_id: 1, image_url: 'https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/van1_bdpjg3.jpg')
-puts 'created a van'
-Van.create(fuel: 'hybrid', model: 'Ford Transit', price: 150, surface: '15', user_id: 1, image_url: 'https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/ford_dkgrli.webp')
-
-puts 'created a van'
-
 Booking.destroy_all
 puts 'destroyed all bookings'
 
-Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 8)
+Van.destroy_all
+puts 'destroyed all vans'
+Van.create(fuel: 'electric', model: 'VW California Ocean', price: 170, surface: '15', user_id: 1, image_url: 'https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/vw_hdryrk.webp', address: "16 Villa Gaudelet, Paris")
+puts 'created a van'
+Van.create(fuel: 'diesel', model: 'Renault Partner', price: 120, surface: '15', user_id: 1, image_url: 'https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/van1_bdpjg3.jpg', address: "Morgiou, 13009 Marseille")
+puts 'created a van'
+Van.create(fuel: 'hybrid', model: 'Ford Transit', price: 150, surface: '15', user_id: 1, image_url: 'https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/ford_dkgrli.webp', address: "Les Canavals, 46240 Cœur-de-Causse")
+
+puts 'created a van'
+
+Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 15)
 puts 'created a booking'
 
-Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 8)
+Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 14)
 puts 'created a booking'
 
-Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 8)
+Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 13)
 puts 'created a booking'
 
 puts 'Youhooou'
