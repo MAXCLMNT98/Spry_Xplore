@@ -1,18 +1,18 @@
 <div class="container">
   <div class="row">
-      <h1>Tous les vans</h1>
-        <div id= "cards" class="row d-flex justify-content-center align-items-center">
-          <% @vans.each do |van| %>
-            <div class="card-home col-4 " style="width: 23rem;">
-              <img src="<%=van.image_url%>" class="card-img-top" alt="van aménagé">
-              <%= link_to van_path(van) do %>
-                <div class="card-body">
-                  <h5 class="card-title"><strong> <%= van.model %></strong></h5>
-                  <p class="card-text">Adresse : <%= van.address %></p>
-                </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+    <h1>Tous les vans</h1>
+      <div id= "cards" class="row d-flex justify-content-center align-items-center">
+        <% @vans.each do |van| %>
+          <div class="card-home col-4 " style="width: 23rem;">
+            <img src="<%=van.image_url%>" class="card-img-top" alt="van aménagé">
+            <%= link_to van_path(van) do %>
+              <div class="card-body">
+                <h5 class="card-title"><strong> <%= van.model %></strong></h5>
+                <p class="card-text">Adresse : <%= van.address %></p>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
   </div>
 </div>

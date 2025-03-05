@@ -24,7 +24,7 @@
   padding: 8px 24px;
   border-radius: 4px;
   background: #000000;
-  transition: background 0.3s ease;
+  transition: 0.3s ease;
 }
 .btn-flat:hover {
   background: #3D3D3D;
@@ -93,4 +93,10 @@
  .carousel-caption {
   height: 6rem;
   border-radius: 1rem;
+  background-color:rgba(100, 100, 100, 0.5);
+  transition: 0.3s ease;
+}
+
+ .carousel-caption:hover {
+  background-color: black;
 }
