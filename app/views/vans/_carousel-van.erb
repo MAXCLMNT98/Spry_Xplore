@@ -1,0 +1,9 @@
+<div class="carousel-item <%= index == 0 ? "active" : "" %>">
+  <img src="<%= van.image_url%>" class="d-block w-100 carousel-item-photo" alt="van chevrolet">
+    <%= link_to van_path(van.id) do %>
+      <div class="carousel-caption d-none d-md-block">
+        <h5><%= van.model %></h5>
+        <p><%= van.address %></p>
+      </div>
+    <% end %>
+</div>
