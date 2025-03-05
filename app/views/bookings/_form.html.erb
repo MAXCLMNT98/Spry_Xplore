@@ -1,10 +1,26 @@
-<%= simple_form_for([@van, @booking]) do |f| %>
+<%= simple_form_for([@van, @booking],html: {
+data: {
+controller: 'flatpickr'
+}
+}) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :start_date, as: :string, input_html: {data: {controller: "datepicker"}}%>
-    <%= f.input :end_date, as: :string, input_html: {data: {controller: "datepicker"}}%>
+   <%= f.input :start_date,
+      as: :string,
+      input_html: {
+      data: {
+        flatpickr_target: 'startDateInput',
+      }
+    } %>
+    <%= f.input :end_date,
+      as: :string,
+      input_html: {
+      data: {
+        flatpickr_target: 'endDateInput'
+      }
+    } %>
   </div>
 
   <div class="form-actions">

@@ -84,7 +84,13 @@
  }
 
  .carousel-item-photo {
-    object-fit: cover;
-    height: 640px;
-    object-position: center;
+  object-fit: cover;
+  height: 640px;
+  object-position: center;
+  display: flex;
  }
+
+ .carousel-caption {
+  height: 6rem;
+  border-radius: 1rem;
+}
