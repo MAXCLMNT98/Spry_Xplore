@@ -2,6 +2,8 @@
   <div class="van-container">
     <% if @van.photo.attached? %>
       <%= cl_image_tag @van.photo.key, class: "van-img"%>
+    <% elsif @van.image_url.present?%>
+      <img src="<%= @van.image_url %>" class="van-img" alt="van">
     <% else %>
       <img src="https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/vw_hdryrk.webp" width="auto" height="auto" class="van-img">
     <% end %>
