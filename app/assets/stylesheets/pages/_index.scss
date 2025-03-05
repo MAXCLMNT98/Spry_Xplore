@@ -1,6 +1,14 @@
 // Import page-specific CSS files here.
 @import "home";
 
+.card-img {
+    height: 14rem;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
 .btn-map {
   border-radius: 12px;
   display: block;
