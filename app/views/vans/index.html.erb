@@ -9,12 +9,13 @@
             <% elsif van.image_url.present?%>
               <img src="<%= van.image_url %>" class="card-img-top" alt="van">
             <% else%>
-              <img src="https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/vw_hdryrk.webp" class= "card-img-top" alt="van">
+              <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1741188996/jikun-li-Xeg4GZFc1IQ-unsplash_cgoixa.jpg" class= "card-img-top" alt="van">
             <% end %>
               <%= link_to van_path(van) do %>
                 <div class="card-body">
                   <h5 class="card-title"><strong> <%= van.model %></strong></h5>
                   <p class="card-text">Adresse : <%= van.address %></p>
+                  <p class="card-text"><%= van.price %>€/jour</p>
                 </div>
           <% end %>
         </div>
