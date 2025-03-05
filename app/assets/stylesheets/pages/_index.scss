@@ -1,6 +1,10 @@
 // Import page-specific CSS files here.
 @import "home";
 
+h1 {
+  font-weight: bold;
+}
+
 .card-img {
     height: 14rem;
     width: 100%;
