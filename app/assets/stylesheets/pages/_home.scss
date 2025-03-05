@@ -87,10 +87,10 @@
   object-fit: cover;
   height: 640px;
   object-position: center;
+  display: flex;
  }
 
  .carousel-caption {
-  background: #3D3D3D;
-  height: 4rem;
-  width: 2rem;
- }
+  height: 6rem;
+  border-radius: 1rem;
+}
