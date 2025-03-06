@@ -35,8 +35,21 @@ h1 {
   color: rgb(98, 92, 92);
 }
 .resize{
-  width: 516px; 
+  width: 516px;
   height: 290.25px;
   object-fit: cover;
   object-position: center;
+}
+
+.card-body-index {
+  height: 180px;
+  padding: 0px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-top: 10px;
+}
+
+.card-text-index {
+  height: 2.5em;
 }
