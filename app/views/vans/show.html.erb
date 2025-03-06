@@ -5,7 +5,7 @@
         <% if @van.photo.attached? %>
           <%= cl_image_tag @van.photo.key, class: "van-img img-fluid rounded"%>
         <% elsif @van.image_url.present? %>
-          <img src="<%= @van.image_url %>" class="van-img img-fluid rounded" alt="van">
+          <img src="<%= @van.image_url %>" style="width: 516px; height: 290.25px;" class="van-img img-fluid rounded" alt="van">
         <% else %>
           <img src="https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/vw_hdryrk.webp" class="van-img img-fluid rounded">
         <% end %>

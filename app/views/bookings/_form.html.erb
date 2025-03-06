@@ -7,14 +7,14 @@ controller: 'flatpickr'
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-   <%= f.input :start_date,
+   <%= f.input :start_date, label: "Date de debut",
       as: :string,
       input_html: {
       data: {
         flatpickr_target: 'startDateInput',
       }
     } %>
-    <%= f.input :end_date,
+    <%= f.input :end_date, label: "Date de fin",
       as: :string,
       input_html: {
       data: {
@@ -22,9 +22,6 @@ controller: 'flatpickr'
       }
     } %>
   </div>
-
-  <div class="form-actions d-flex form-actions justify-content-start" style="margin-top: 80px">
-    <%= f.button :submit, "Reserver ce van", class: "btn btn-flat mb-1"%>
+  <%= f.button :submit, "Réserver ce van", class: "ms-2 btn btn-flat "%>    
   
 <% end %>
-</div>
