@@ -25,7 +25,7 @@ class VansController < ApplicationController
   def create
     @van = Van.new(van_params)
     @van.user = current_user
-    if @van.save
+    if @van.save!
       redirect_to vans_path, notice: "Votre van a bien été créé"
     else
       render :new, status: :unprocessable_entity
