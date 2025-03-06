@@ -7,48 +7,16 @@
         <h1 class="title-dashboard">Vos réservations de vans</h1>
 
         <% @bookings_as_visitor.each do |booking| %>
-          <div class="container-card d-flex">
+         <%= render booking  %>
 
-              <% if booking.van.photo.attached? %>
-                <%= cl_image_tag booking.van.photo.key, class: "card-dashboard-img"%>
-              <% elsif booking.van.image_url.present?%>
-                <img src="<%= booking.van.image_url %>" class="card-dashboard-img" alt="van">
-              <% else %>
-                <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1741188996/jikun-li-Xeg4GZFc1IQ-unsplash_cgoixa.jpg" width="auto" height="auto" class="card-dashboard-img">
-              <% end %>
-
-
-            <div class="container-info d-flex flex-column align-items-start">
-              <div class="title-dash"><%= booking.van.model %></div>
-              <div class="start-date">Date de début : <%= booking.start_date %></div>
-              <div class="end-date">Date de fin : <%= booking.end_date %></div>
-            </div>
-          </div>
         <% end%>
       </div>
 
     <div class="col-xs-12 col-sm-10 mt-5">
       <h1 class="tile-dashboard">Vos vans loués</h1>
-      <ul class="list-group mb-3">
         <% @bookings_as_owner.each do |booking| %>
-          <div class="container-card d-flex">
-
-              <% if booking.van.photo.attached? %>
-                <%= cl_image_tag booking.van.photo.key, class: "card-dashboard-img"%>
-              <% elsif booking.van.image_url.present?%>
-                <img src="<%= booking.van.image_url %>" class="card-dashboard-img" alt="van">
-              <% else %>
-                <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1741188996/jikun-li-Xeg4GZFc1IQ-unsplash_cgoixa.jpg" width="auto" height="auto" class="card-dashboard-img">
-              <% end %>
-
-
-            <div class="container-info d-flex flex-column align-items-start">
-              <div class="title-dash"><%= booking.van.model %></div>
-              <div class="start-date">Date de début : <%= booking.start_date %></div>
-              <div class="end-date">Date de fin : <%= booking.end_date %></div>
-            </div>
-          </div>
-        <% end%>      </ul>
+          <%= render booking  %>
+        <% end%>
     </div>
 
   </div>
