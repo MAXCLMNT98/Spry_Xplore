@@ -37,7 +37,8 @@ class BookingsController < ApplicationController
     else
       redirect_to @booking, alert: 'Erreur : réservation non rejectée.'
     end
-
+  end
+  
   private
 
   def booking_params
