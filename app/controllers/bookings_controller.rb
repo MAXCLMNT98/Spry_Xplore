@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
   @van = Van.find(params[:van_id])
   @booking.van = @van
   if @booking.save
-    redirect_to "/", notice: "Vous avez réservé un van"
+    redirect_to "/bookings", notice: "Vous avez réservé un van"
   else
     render :new, status: :unprocessable_entity
   end
