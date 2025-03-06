@@ -24,3 +24,13 @@ h1 {
   width: 100%;
   height: 500px;
 }
+
+.plain {
+  text-decoration: none;
+  color: black;
+}
+
+.plain:hover {
+  text-decoration: none;
+  color: rgb(98, 92, 92);
+}
