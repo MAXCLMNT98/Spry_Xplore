@@ -13,6 +13,7 @@ class VansController < ApplicationController
 
   def show
     @van = Van.find(params[:id])
+    @booking = Booking.new  
     if @van.nil?
       redirect_to vans_path, alert: "Van non trouvé."
     end
