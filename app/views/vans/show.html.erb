@@ -1,10 +1,26 @@
 <div class="container">
-<h2><%= @van.model%></h2>
-<p>Fuel: <%= @van.fuel %></p>
-<p>Price: <%= @van.price %></p>
-<p><%= @van.surface %></p>
+  <div class="van-container">
+    <% if @van.photo.attached? %>
+      <%= cl_image_tag @van.photo.key, class: "van-img"%>
+    <% elsif @van.image_url.present?%>
+      <img src="<%= @van.image_url %>" class="van-img" alt="van">
+    <% else %>
+      <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1741188996/jikun-li-Xeg4GZFc1IQ-unsplash_cgoixa.jpg" width="auto" height="auto" class="van-img">
+    <% end %>
+    <h2><%= @van.model%></h2>
+    <div class="details-card">
+      <p>Fuel: <%= @van.fuel %></p>
+      <p>Price: <%= @van.price %>€ per day</p>
+      <% if @van.surface? %>
+        <p>Surface: <%= @van.surface %>㎡</p>
+      <% end %>
+    </div>
 
-<%= link_to "Réserver ce van",  new_van_booking_path(@van), class: "btn btn-flat" %>
-
-<%= link_to "Tous les vans", vans_path %>
+    <div>
+      <%= link_to "Réserver ce van", new_van_booking_path(@van), class: "btn btn-flat" %>
+    </div>
+  </div>
+  <div>
+    <%= link_to "Retour", vans_path, class: "btn btn-secondary" %>
+  </div>
 </div>

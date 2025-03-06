@@ -3,7 +3,7 @@
     <div class="container">
       <h1>Bienvenue sur <strong>Spry® Xplore</strong></h1>
       <p>Changez la votre vision du voyage, et partez pour l'aventure !</p>
-      <%= link_to "Reserver un van", vans_path, class: "btn btn-flat" %>
+      <%= link_to "Réserver un van", vans_path, class: "btn btn-flat" %>
       <%= link_to "Louer mon van", new_van_path, class: "btn btn-flat" %>
     </div>
   </div>
@@ -15,9 +15,9 @@
   <div id= "carroussel container">
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-      <% @vans.each_with_index do |van, index| %>
-        <%= render "vans/carousel-van", van: van, index: index %>
-      <% end %>
+        <% @vans.each_with_index do |van, index| %>
+          <%= render "vans/carousel-van", van: van, index: index %>
+        <% end %>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

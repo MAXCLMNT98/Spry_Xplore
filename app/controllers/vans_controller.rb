@@ -5,13 +5,17 @@ class VansController < ApplicationController
     @markers = @vans.geocoded.map do |van|
       {
         lat: van.latitude,
-        lng: van.longitude
+        lng: van.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {van: van})
       }
     end
   end
 
   def show
     @van = Van.find(params[:id])
+    if @van.nil?
+      redirect_to vans_path, alert: "Van non trouvé."
+    end
   end
 
   def new
@@ -21,8 +25,8 @@ class VansController < ApplicationController
   def create
     @van = Van.new(van_params)
     @van.user = current_user
-    if @van.save
-      redirect_to "/", notice: "Votre van a été créé"
+    if @van.save!
+      redirect_to vans_path, notice: "Votre van a bien été créé"
     else
       render :new, status: :unprocessable_entity
     end
