@@ -16,7 +16,8 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @van = Van.find(params[:van_id])
     @booking.van = @van
-    if @booking.save
+    @booking.status = "En attente"
+    if @booking.save!
       redirect_to "/bookings", notice: "Vous avez réservé un van."
     else
       render :new, status: :unprocessable_entity
@@ -38,7 +39,7 @@ class BookingsController < ApplicationController
       redirect_to @booking, alert: 'Erreur : réservation non rejectée.'
     end
   end
-  
+
   private
 
   def booking_params
