@@ -1,26 +1,39 @@
 <div class="container">
-  <div class="van-container">
-    <h2><%= @van.model%></h2>
-    <% if @van.photo.attached? %>
-      <%= cl_image_tag @van.photo.key, class: "van-img"%>
-    <% elsif @van.image_url.present?%>
-      <img src="<%= @van.image_url %>" class="van-img" alt="van">
-    <% else %>
-      <img src="https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/vw_hdryrk.webp" width="auto" height="auto" class="van-img">
-    <% end %>
+<div class="container mt-4">
+  <div class="van-container p-4 border rounded shadow-sm bg-light">
+    <h2><%= @van.model %></h2>
     
-    <div class="details-card">
-      <p>Fuel: <%= @van.fuel %></p>
-      <p>Price: <%= @van.price %>€ per day</p>
-      <% if @van.surface? %>
-        <p>Surface: <%= @van.surface %>㎡</p>
-      <% end %>
-      <h3>Reserver le van <%= @van.model%></h3>
-      <%= render "bookings/form", booking: @booking %>
+    <div class="row">
+      <!-- Colonne de gauche : Image + Infos -->
+      <div class="col-md-6">
+        <% if @van.photo.attached? %>
+          <%= cl_image_tag @van.photo.key, class: "van-img img-fluid rounded"%>
+        <% elsif @van.image_url.present? %>
+          <img src="<%= @van.image_url %>" class="van-img img-fluid rounded" alt="van">
+        <% else %>
+          <img src="https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/vw_hdryrk.webp" class="van-img img-fluid rounded">
+        <% end %>
+
+        <div class="details-card mt-3">
+          <p><strong>Fuel:</strong> <%= @van.fuel %></p>
+          <p><strong>Price:</strong> <%= @van.price %>€ per day</p>
+          <% if @van.surface? %>
+            <p><strong>Surface:</strong> <%= @van.surface %>㎡</p>
+          <% end %>
+        </div>
+      </div>
+
+      <!-- Colonne de droite : Formulaire de réservation -->
+      <div class="col-md-6 d-flex align-items-center">
+        <div class="flex-grow-1">
+          <h3 class="text-center mb-3">Réserver le van <%= @van.model %></h3>
+          <%= render "bookings/form", booking: @booking %>
+        </div>
+      </div>
     </div>
-
-
   </div>
+</div>
+
   <div>
     <%= link_to "Retour", vans_path, class: "btn btn-secondary" %>
   </div>
