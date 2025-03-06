@@ -7,11 +7,14 @@
     <%= f.input :model, label: "Modèle", placeholder: "Roadsurfer, Volkswagen Crafter..." %>
     <%= f.input :price, label: "Prix par jour (en €)", placeholder: "Indiquez le prix", input_html: { min: 0 } %>
     <%= f.input :surface, label: "Surface (en m²)", placeholder: "Indiquez la surface" %>
+    <%= f.input :address, label: "Adresse",
+    input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
+    wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
     <%= f.input :photo, as: :file %>
   </div>
 
   <%= f.button :submit, value: "Créer mon van", class: "ms-2 btn btn-flat   "%>
   <div class="form-actions d-flex form-actions justify-content-start" style="margin-top: 80px">
     <%= link_to "Retour", vans_path, class: "btn btn-secondary py-2 rounded-3 me-1" %>
-    
+
 <% end %>
