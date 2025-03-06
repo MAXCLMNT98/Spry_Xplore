@@ -1,11 +1,23 @@
- <li class="list-group-item">
-  <strong><%= booking.van.model %></strong><br>
-  Date de début : <%= booking.start_date %><br>
-  Date de fin : <%= booking.end_date %><br>
-  <%= booking.status %>
+<div class="container-card d-flex">
 
-  <% if booking.status == 'En attente' && booking_type == "owner" %>
-      <%= button_to 'Accepter', accept_booking_path(booking), method: :patch, class: 'btn btn-flat m-2' %>
-      <%= button_to 'Refuser', reject_booking_path(booking), method: :patch, class: 'btn btn-flat m-2' %>
-</li>
+  <% if booking.van.photo.attached? %>
+    <%= cl_image_tag booking.van.photo.key, class: "card-dashboard-img"%>
+  <% elsif booking.van.image_url.present?%>
+    <img src="<%= booking.van.image_url %>" class="card-dashboard-img" alt="van">
+  <% else %>
+    <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1741188996/jikun-li-Xeg4GZFc1IQ-unsplash_cgoixa.jpg" width="auto" height="auto" class="card-dashboard-img">
   <% end %>
+
+  <div class="container-info d-flex flex-column align-items-start">
+    <div class="title-dash"><%= booking.van.model %></div>
+    <div class="start-date">Date de début : <%= booking.start_date %></div>
+    <div class="end-date">Date de fin : <%= booking.end_date %></div>
+    <div>
+      <%= booking.status %>
+      <% if booking.status == 'En attente' && booking_type == "owner" %>
+        <%= button_to 'Accepter', accept_booking_path(booking), method: :patch, class: 'btn btn-flat m-2' %>
+        <%= button_to 'Refuser', reject_booking_path(booking), method: :patch, class: 'btn btn-flat m-2' %>
+      <% end %>
+    </div>
+  </div>
+</div>

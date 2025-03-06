@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10">
-      <h1>Vos réservations de vans</h1>
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-10 mx-auto">
+      <h1 class="title-dashboard">Vos réservations de vans</h1>
       <ul class="list-group mb-3">
         <% @bookings_as_visitor.each do |booking| %>
           <%= render booking, booking: booking, booking_type: "visitor" %>
@@ -10,7 +10,7 @@
     </div>
 
     <div class="col-xs-12 col-sm-10 mt-5">
-      <h1>Vos vans loués</h1>
+      <h1 class="title-dashboard">Vos vans loués</h1>
       <ul class="list-group mb-3">
         <% @bookings_as_owner.each do |booking| %>
           <%= render booking, booking: booking, booking_type: "owner" %>
