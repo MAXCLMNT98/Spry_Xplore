@@ -1,4 +1,4 @@
-  <div class="container-card d-flex">
+<div class="container-card d-flex">
 
   <% if booking.van.photo.attached? %>
     <%= cl_image_tag booking.van.photo.key, class: "card-dashboard-img"%>
@@ -12,5 +12,12 @@
     <div class="title-dash"><%= booking.van.model %></div>
     <div class="start-date">Date de début : <%= booking.start_date %></div>
     <div class="end-date">Date de fin : <%= booking.end_date %></div>
+    <div>
+      <%= booking.status %>
+      <% if booking.status == 'En attente' && booking_type == "owner" %>
+        <%= button_to 'Accepter', accept_booking_path(booking), method: :patch, class: 'btn btn-flat m-2' %>
+        <%= button_to 'Refuser', reject_booking_path(booking), method: :patch, class: 'btn btn-flat m-2' %>
+      <% end %>
+    </div>
   </div>
 </div>

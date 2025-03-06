@@ -1,25 +1,29 @@
 <div class="container">
-  <div class="van-container">
-    <% if @van.photo.attached? %>
-      <%= cl_image_tag @van.photo.key, class: "van-img"%>
-    <% elsif @van.image_url.present?%>
-      <img src="<%= @van.image_url %>" class="van-img" alt="van">
-    <% else %>
-      <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1741188996/jikun-li-Xeg4GZFc1IQ-unsplash_cgoixa.jpg" width="auto" height="auto" class="van-img">
-    <% end %>
-    <h2><%= @van.model%></h2>
-    <div class="details-card">
-      <p>Fuel: <%= @van.fuel %></p>
-      <p>Price: <%= @van.price %>€ per day</p>
-      <% if @van.surface? %>
-        <p>Surface: <%= @van.surface %>㎡</p>
-      <% end %>
+    <div class="row">
+      <div class="col-md-6">
+        <h2><%= @van.model %></h2>
+        <% if @van.photo.attached? %>
+          <%= cl_image_tag @van.photo.key, class: "van-img img-fluid rounded resize"%>
+        <% elsif @van.image_url.present? %>
+          <img src="<%= @van.image_url %>"  class="van-img img-fluid rounded resize" alt="van">
+        <% else %>
+          <img src="https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/vw_hdryrk.webp" class="van-img img-fluid rounded resize">
+        <% end %>
+          <p><strong>Carburant:</strong> <%= @van.fuel %></p>
+          <p><strong>Prix:</strong> <%= @van.price %>€ par jour</p>
+          <% if @van.surface? %>
+            <p><strong>Superficie:</strong> <%= @van.surface %>㎡</p>
+          <% end %>
+      </div>
+      <div class="col-md-6 d-flex ">
+        <div class="flex-grow-1">
+          <h3 class="text-center mb-3">Réserver le van <%= @van.model %></h3>
+          <%= render "bookings/form", booking: @booking %>
+        </div>
+      </div>
     </div>
 
-    <div>
-      <%= link_to "Réserver ce van", new_van_booking_path(@van), class: "btn btn-flat" %>
-    </div>
-  </div>
+
   <div>
     <%= link_to "Retour", vans_path, class: "btn btn-secondary" %>
   </div>

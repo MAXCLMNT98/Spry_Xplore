@@ -13,6 +13,7 @@ class VansController < ApplicationController
 
   def show
     @van = Van.find(params[:id])
+    @booking = Booking.new
     if @van.nil?
       redirect_to vans_path, alert: "Van non trouvé."
     end
@@ -25,7 +26,7 @@ class VansController < ApplicationController
   def create
     @van = Van.new(van_params)
     @van.user = current_user
-    if @van.save
+    if @van.save!
       redirect_to vans_path, notice: "Votre van a bien été créé"
     else
       render :new, status: :unprocessable_entity
@@ -35,6 +36,6 @@ class VansController < ApplicationController
   private
 
   def van_params
-    params.require(:van).permit(:model, :fuel, :price, :surface, :photo)
+    params.require(:van).permit(:model, :fuel, :price, :surface, :photo, :address)
   end
 end
