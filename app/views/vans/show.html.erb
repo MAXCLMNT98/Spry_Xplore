@@ -3,11 +3,11 @@
       <div class="col-md-6">
         <h2><%= @van.model %></h2>
         <% if @van.photo.attached? %>
-          <%= cl_image_tag @van.photo.key, class: "van-img img-fluid rounded"%>
+          <%= cl_image_tag @van.photo.key, class: "van-img img-fluid rounded resize"%>
         <% elsif @van.image_url.present? %>
-          <img src="<%= @van.image_url %>" style="width: 516px; height: 290.25px;" class="van-img img-fluid rounded" alt="van">
+          <img src="<%= @van.image_url %>"  class="van-img img-fluid rounded resize" alt="van">
         <% else %>
-          <img src="https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/vw_hdryrk.webp" class="van-img img-fluid rounded">
+          <img src="https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/vw_hdryrk.webp" class="van-img img-fluid rounded resize">
         <% end %>
           <p><strong>Fuel:</strong> <%= @van.fuel %></p>
           <p><strong>Price:</strong> <%= @van.price %>€ per day</p>
