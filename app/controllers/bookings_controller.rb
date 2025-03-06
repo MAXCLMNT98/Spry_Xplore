@@ -34,9 +34,9 @@ class BookingsController < ApplicationController
 
   def reject
     if @booking.reject!
-      redirect_to @booking, notice: 'La réservation a été rejetée.'
+      redirect_to @booking, notice: 'La réservation a été refusée.'
     else
-      redirect_to @booking, alert: 'Erreur : réservation non rejectée.'
+      redirect_to @booking, alert: 'Erreur : réservation non refusée.'
     end
   end
 
