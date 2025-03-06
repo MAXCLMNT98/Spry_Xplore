@@ -3,14 +3,14 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :fuel, prompt: "Select a fuel type", collection: Van::CATEGORIES %>
-    <%= f.input :model, placeholder: "Roadsurfer, Volkswagen Crafter..." %>
-    <%= f.input :price, label: "Daily price (in €)", placeholder: "Indicate your price per day", input_html: { min: 0 } %>
-    <%= f.input :surface, label: "Surface (in m²)", placeholder: "Indicate the surface" %>
+    <%= f.input :fuel, label: "Type de carburant", prompt: "Sélectionnez votre type de carburant", collection: Van::CATEGORIES %>
+    <%= f.input :model, label: "Modèle", placeholder: "Roadsurfer, Volkswagen Crafter..." %>
+    <%= f.input :price, label: "Prix par jour (en €)", placeholder: "Indiquez le prix", input_html: { min: 0 } %>
+    <%= f.input :surface, label: "Surface (en m²)", placeholder: "Indiquez la surface" %>
     <%= f.input :photo, as: :file %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, class: "btn btn-primary mb-1"%>
+    <%= f.button :submit, "Créer le van", class: "btn btn-flat mb-1"%>
   </div>
 <% end %>
