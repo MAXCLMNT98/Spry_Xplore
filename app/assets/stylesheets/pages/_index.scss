@@ -1,6 +1,10 @@
 // Import page-specific CSS files here.
 @import "home";
 
+h1 {
+  font-weight: bold;
+}
+
 .card-img {
     height: 14rem;
     width: 100%;
@@ -19,4 +23,14 @@
 #map {
   width: 100%;
   height: 500px;
+}
+
+.plain {
+  text-decoration: none;
+  color: black;
+}
+
+.plain:hover {
+  text-decoration: none;
+  color: rgb(98, 92, 92);
 }

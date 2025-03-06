@@ -1,4 +1,6 @@
+<%= link_to van_path(van), class: "plain" do %>
 <h5><%= van.model %></h2>
 <img id="van-icon" style="height: 100px" src="<%= van.image_url %>" alt="van">
 <p><%= van.address %></p>
 <p><%= van.price %>€/jour</p>
+<% end %>
