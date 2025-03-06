@@ -1,9 +1,11 @@
 <div class="container">
-<h1>Ajouter votre van</h1>
+  <div class="row">
+    <div class="col-6">
+       <%= render "form", van: @van %>
+    </div>
+  </div>
 
-<%= render "form", van: @van %>
-
-<div>
-  <%= link_to "Tous les vans", vans_path, class: "btn btn-secondary mb-1" %>
-</div>
+  <div class="col-6">
+      <img src="https://www.moodgoyave.com/wp-content/uploads/2023/07/van-life-liberte.jpg" width="600px" class="object-fit-cover rounded-4" alt="">
+    </div>
 </div>
