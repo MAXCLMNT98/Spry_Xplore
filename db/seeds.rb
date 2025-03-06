@@ -30,13 +30,13 @@ puts 'created a van'
 Van.create(fuel: 'Hydrogène', model: 'Volkswagen California', price: 190, surface: '13', user_id: 1, image_url: "https://res.cloudinary.com/dxmzqi2oa/image/upload/v1741262018/c6ee0d2e594574a12c5df51319fdb95c-2098x1180.jpg_oczenc.webp", address: "37 Bd Albert Delacroix, 35800 Dinard")
 puts 'created a van'
 
-Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 96)
+Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 1)
 puts 'created a booking'
 
-Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 98)
+Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 2)
 puts 'created a booking'
 
-Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 99)
+Booking.create(start_date: Date.today, end_date: Date.today + 5, user_id: 1, van_id: 3)
 puts 'created a booking'
 
 puts 'Youhooou'
