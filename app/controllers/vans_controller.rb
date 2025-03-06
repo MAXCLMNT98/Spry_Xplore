@@ -13,7 +13,7 @@ class VansController < ApplicationController
 
   def show
     @van = Van.find(params[:id])
-    @booking = Booking.new  
+    @booking = Booking.new
     if @van.nil?
       redirect_to vans_path, alert: "Van non trouvé."
     end
@@ -36,6 +36,6 @@ class VansController < ApplicationController
   private
 
   def van_params
-    params.require(:van).permit(:model, :fuel, :price, :surface, :photo)
+    params.require(:van).permit(:model, :fuel, :price, :surface, :photo, :address)
   end
 end

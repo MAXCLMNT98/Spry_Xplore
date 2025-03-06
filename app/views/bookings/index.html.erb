@@ -3,14 +3,18 @@
     <div class="col-xs-12 col-sm-10">
       <h1>Vos réservations de vans</h1>
       <ul class="list-group mb-3">
-        <%= render @bookings_as_visitor %>
+        <% @bookings_as_visitor.each do |booking| %>
+          <%= render booking, booking: booking, booking_type: "visitor" %>
+        <% end %>
       </ul>
     </div>
 
     <div class="col-xs-12 col-sm-10 mt-5">
       <h1>Vos vans loués</h1>
       <ul class="list-group mb-3">
-        <%= render @bookings_as_owner %>
+        <% @bookings_as_owner.each do |booking| %>
+          <%= render booking, booking: booking, booking_type: "owner" %>
+        <% end %>
       </ul>
     </div>
   </div>
