@@ -1,7 +1,15 @@
 
+.dashboard-h1 {
+  margin-top: 20px;
+  margin-left: 20px;
+
+}
+
 .title-dashboard {
   margin-bottom: 20px;
+  font-weight: bold;
 }
+
 
 .container-card {
   overflow: hidden;
@@ -34,7 +42,6 @@
   margin-bottom: 0;
   margin-top: 8px;
 }
-
 
 .container-info .end-date {
   font-size: 12px;
