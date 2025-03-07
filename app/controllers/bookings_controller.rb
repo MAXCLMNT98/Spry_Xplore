@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @booking.van = @van
     @booking.status = "En attente"
     if @booking.save!
-      redirect_to "/bookings", notice: "Vous avez réservé un van."
+      redirect_to "/bookings", notice: "Votre réservation de van a été créée et est en attente."
     else
       render :new, status: :unprocessable_entity
     end
