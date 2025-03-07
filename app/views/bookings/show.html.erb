@@ -19,11 +19,11 @@
         <div class="flex-grow-1">
           <h3 class="text-center mb-3">Détails de votre voyage</h3>
           <%= simple_form_for([@van, @booking]) do |f| %>
-          <label>Date de debut</label>
-        <input type="text" value="<%= @booking.start_date.strftime("%-d %B %Y") %>" readonly class="form-control">
+          <label>Date de début</label>
+        <input type="text" value="<%= I18n.l(@booking.start_date, format: "%-d %B %Y", locale: :fr) %>" readonly class="form-control">
 
         <label>Date de fin</label>
-        <input type="text" value="<%= @booking.end_date %>" readonly class="form-control">
+        <input type="text" value="<%= I18n.l(@booking.end_date, format: "%-d %B %Y", locale: :fr) %>" readonly class="form-control">
         <div class="status">Statut : <%= @booking.status %></div>
         <% end %>
           <div data-controller="toggle" class="mt-5 map-container">
