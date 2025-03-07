@@ -1,8 +1,10 @@
-<%= simple_form_for([@van, @booking],html: {
-data: {
-controller: 'flatpickr'
-}
-}) do |f| %>
+<%= simple_form_for([@van, @booking],
+                    html: {
+                      data: {
+                        controller: 'flatpickr',
+                        flatpickr_price_value: @van.price
+                      }
+                    }) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -18,10 +20,13 @@ controller: 'flatpickr'
       as: :string,
       input_html: {
       data: {
-        flatpickr_target: 'endDateInput'
+        flatpickr_target: 'endDateInput',
       }
     } %>
   </div>
-  <%= f.button :submit, "Réserver ce van", class: "ms-2 btn btn-flat "%>    
-  
+
+  <p id="final_price" data-flatpickr-target="price">Montant TOTAL : <strong><%= @van.price %> €</strong></p>
+
+  <%= f.button :submit, "Réserver ce van", class: "ms-2 btn btn-flat "%>
+
 <% end %>
