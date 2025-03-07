@@ -4,8 +4,15 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
     @bookings_as_visitor = current_user.bookings_as_visitor
     @bookings_as_owner = current_user.bookings_as_owner
+    @available_vans = current_user.vans.where(status: 'Disponible')
   end
-
+  def show
+    @booking = Booking.find(params[:id])
+    if @booking.nil?
+      redirect_to vans_path, alert: "reservation non trouvé non trouvé."
+    end
+  end
+  
   def new
     @van = Van.find(params[:van_id])
     @booking = Booking.new
@@ -19,6 +26,7 @@ class BookingsController < ApplicationController
     @booking.status = "En attente"
 
     if @booking.save!
+      @van.update(status: 'Réservé')
       redirect_to "/bookings", notice: "Votre réservation de van a été créée et est en attente."
     else
       redirect_to @van, alert: 'Erreur : veuillez verifier la date'

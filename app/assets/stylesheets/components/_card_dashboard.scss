@@ -1,7 +1,15 @@
 
+.dashboard-h1 {
+  margin-top: 20px;
+  margin-left: 20px;
+
+}
+
 .title-dashboard {
   margin-bottom: 20px;
+  font-weight: bold;
 }
+
 
 .container-card {
   overflow: hidden;
@@ -35,7 +43,6 @@
   margin-top: 8px;
 }
 
-
 .container-info .end-date {
   font-size: 12px;
   line-height: 1.4;
@@ -44,7 +51,47 @@
   margin-top: 8px;
 }
 
-.status {
+.address {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.status-van {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.status-booking {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.status-refusée {
+  color: rgb(144, 2, 2);
+}
+
+.status-acceptée {
+  color:rgb(2, 83, 2);
+}
+
+.status-en-attente {
+  color: rgb(2, 0, 146);
+}
+
+.status-disponible {
+  color: rgb(2, 83, 2);
+}
+
+.price {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
