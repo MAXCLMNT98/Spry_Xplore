@@ -1,19 +1,20 @@
 <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <h2><%= @van.model %></h2>
-        <% if @van.photo.attached? %>
-          <%= cl_image_tag @van.photo.key, class: "van-img img-fluid rounded resize"%>
-        <% elsif @van.image_url.present? %>
-          <img src="<%= @van.image_url %>"  class="van-img img-fluid rounded resize" alt="van">
-        <% else %>
-          <img src="https://res.cloudinary.com/dhyuv86iu/image/upload/v1741190112/development/2yjwlody3oudx5hkk0f8vv05q2k8.jpg" class="van-img img-fluid rounded resize">
-        <% end %>
-          <p><strong>Carburant :</strong> <%= @van.fuel %></p>
-          <p><strong>Prix :</strong> <%= @van.price %>€ par jour</p>
-          <% if @van.surface? %>
-            <p><strong>Superficie :</strong> <%= @van.surface %>㎡</p>
-          <% end %>
+  <div class="row">
+
+    <div class="col-md-6">
+      <h2><%= @van.model %></h2>
+      <% if @van.photo.attached? %>
+        <%= cl_image_tag @van.photo.key, class: "van-img img-fluid rounded resize"%>
+      <% elsif @van.image_url.present? %>
+        <img src="<%= @van.image_url %>"  class="van-img img-fluid rounded resize" alt="van">
+      <% else %>
+        <img src="https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/vw_hdryrk.webp" class="van-img img-fluid rounded resize">
+      <% end %>
+      <p><strong>Carburant :</strong> <%= @van.fuel %></p>
+      <p><strong>Prix :</strong> <%= @van.price %>€ par jour</p>
+      <% if @van.surface? %>
+        <p><strong>Superficie :</strong> <%= @van.surface %>㎡</p>
+      <% end %>
       </div>
       <div class="col-md-6 d-flex ">
         <div class="flex-grow-1">
@@ -34,19 +35,36 @@
       data-map-show-popup-value="false"
       data-map-zoom-map-value="false">
     </div>
-      </div>
+
+    <div class="col-md-6 d-flex ">
+
+      <div class="flex-grow-1">
+
+        <h3 class="text-center mb-3">Détails de votre voyage</h3>
+        <%= render "bookings/form", booking: @booking %>
+
+        <div data-controller="toggle" class="mt-5 map-container">
+          <button class="btn btn-flat btn-map" data-action="click->toggle#fire"><span>Voir la carte</span>
+            <img src="https://res.cloudinary.com/dexzpdaju/image/upload/v1741184289/icons8-carte-30_sx5vze.png" alt="icon-map">
+          </button>
+          <div style="height: 200px" id="map-container" data-toggle-target="togglableElement"class="d-none"
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+            data-map-show-controls-value="false"
+            data-map-show-popup-value="false"
+            data-map-zoom-map-value="false">
+          </div>
         </div>
 
-
-
-  </div>
-
+      </div>
 
     </div>
 
-
+  </div>
 
   <div>
     <%= link_to "Retour", vans_path, class: "btn btn-secondary" %>
   </div>
+
 </div>
