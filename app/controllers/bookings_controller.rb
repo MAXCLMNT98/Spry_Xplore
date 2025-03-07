@@ -11,8 +11,13 @@ class BookingsController < ApplicationController
     if @booking.nil?
       redirect_to vans_path, alert: "reservation non trouvé non trouvé."
     end
+    @markers = [
+      {
+        lat: @booking.van.latitude, lng: @booking.van.longitude
+      }
+    ]
   end
-  
+
   def new
     @van = Van.find(params[:van_id])
     @booking = Booking.new
