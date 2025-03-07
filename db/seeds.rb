@@ -17,7 +17,7 @@ a = Van.create(
   fuel: 'Electrique',
   model: 'VolksWagen Combi T2',
   price: 170, surface: '15',
-  user_id: 1,
+  user_id: 37,
   image_url: "https://res.cloudinary.com/dhyuv86iu/image/upload/v1741188280/alpert-wang-rxQL0ieF_Bs-unsplash_spzh1t.jpg",
   address: "16 Villa Gaudelet, Paris"
 )
