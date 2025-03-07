@@ -2,11 +2,12 @@
   <div class="row justify-content-center">
     <div class="col-xs-12 col-sm-8 mx-auto">
         <ul class="list-group mb-3">
-        <% @bookings_as_visitor = [] %>
           <% if @bookings_as_visitor.any? %>
             <h2 class="title-dashboard">Vos réservations de vans</h2>
             <% @bookings_as_visitor.each do |booking| %>
-              <%= render booking, booking: booking, booking_type: "visitor" %>
+              <%= link_to booking_path(booking), class: "plain" do %>
+                <%= render booking, booking: booking, booking_type: "visitor" %>
+              <% end %>
             <% end %>
           <% else %>
             <div class="fallback-container">
@@ -21,8 +22,6 @@
       </div>
 
     <div class="col-xs-12 col-sm-8 mt-5">
-      <% @bookings_as_owner = [] %>
-      <% @available_vans = [] %>
       <% if @bookings_as_owner.any? || @available_vans.any? %>
         <h2 class="title-dashboard">Vos vans</h1>
        <% end %>

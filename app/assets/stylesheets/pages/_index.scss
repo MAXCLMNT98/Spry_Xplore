@@ -33,7 +33,19 @@ h1 {
 .plain:hover {
   text-decoration: none;
   color: rgb(98, 92, 92);
+  .status-refusée {
+    color: rgb(185, 3, 3);
+  }
+
+  .status-acceptée {
+    color:rgb(1, 151, 1);
+  }
+
+  .status-en-attente {
+    color: rgb(6, 3, 174);
+  }
 }
+
 .resize{
   width: 516px;
   height: 290.25px;

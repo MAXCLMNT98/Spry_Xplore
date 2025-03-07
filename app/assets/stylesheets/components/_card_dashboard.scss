@@ -10,7 +10,6 @@
   font-weight: bold;
 }
 
-
 .container-card {
   overflow: hidden;
   height: 120px;
@@ -103,13 +102,13 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-top: 10px; /* Ajoutez un espacement au-dessus des boutons */
+  margin-top: 10px;
 }
 
 .button-status .btn {
   border-radius: 20px; /* Bordures arrondies */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Ombre pour un effet 3D */
-  background: linear-gradient(to right, #222121, #2a2a2a); /* Dégradé de couleur */
+  background: linear-gradient(to right, #161616, #2f2f2f); /* Dégradé de couleur */
   border: none; /* Supprime la bordure par défaut */
   color: white; /* Couleur du texte */
   padding: 10px 20px; /* Espacement interne */
