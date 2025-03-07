@@ -10,4 +10,12 @@ class Van < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
+  before_create :set_default_status
+
+  private
+
+  def set_default_status
+    self.status ||= 'Disponible'
+  end
 end

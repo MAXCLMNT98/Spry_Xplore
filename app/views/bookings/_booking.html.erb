@@ -12,11 +12,11 @@
     <div class="title-dash"><%= booking.van.model %></div>
     <div class="start-date">Date de début : <%= booking.start_date %></div>
     <div class="end-date">Date de fin : <%= booking.end_date %></div>
-    <div class="status">Statut : <%= booking.status %></div>
+    <div class="status-booking status-<%= booking.status.downcase.tr(' ', '-') %>">Statut de la réservation : <%= booking.status %></div>
 
   </div>
 
-  <div class="button-status col-6">
+  <div class="button-status col-5">
    <% if booking.status == 'En attente' && booking_type == "owner" %>
     <%= button_to 'Accepter', accept_booking_path(booking), method: :patch, class: 'btn btn-flat m-2' %>
     <%= button_to 'Refuser', reject_booking_path(booking), method: :patch, class: 'btn btn-flat m-2' %>
