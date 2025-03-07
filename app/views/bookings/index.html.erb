@@ -5,7 +5,7 @@
     <div class="col-xs-12 col-sm-8 mx-auto">
         <ul class="list-group mb-3">
           <% if @bookings_as_visitor.any? %>
-            <h3 class="title-dashboard">Vos réservations de vans</h3>
+            <h2 class="title-dashboard">Vos réservations de vans</h2>
             <% @bookings_as_visitor.each do |booking| %>
               <%= render booking, booking: booking, booking_type: "visitor" %>
             <% end %>
@@ -24,7 +24,7 @@
       <div class="col-xs-12 col-sm-8 mt-5">
         <ul class="list-group mb-3">
           <% if @bookings_as_owner.any? %>
-            <h1 class="title-dashboard">Vos vans</h1>
+            <h2 class="title-dashboard">Vos vans en location</h2>
             <% @bookings_as_owner.each do |booking| %>
               <%= render booking, booking: booking, booking_type: "owner" %>
             <% end %>
