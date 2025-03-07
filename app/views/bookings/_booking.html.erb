@@ -12,7 +12,7 @@
     <div class="title-dash"><%= booking.van.model %></div>
     <div class="start-date">Date de début : <%= booking.start_date %></div>
     <div class="end-date">Date de fin : <%= booking.end_date %></div>
-    <div class="status">Statut : <%= booking.status %></div>
+    <div class="status-booking status-<%= booking.status.downcase.tr(' ', '-') %>">Statut de la réservation : <%= booking.status %></div>
 
   </div>
 

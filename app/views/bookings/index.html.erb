@@ -1,5 +1,3 @@
-<h1 class="dashboard-h1">Réservations</h1>
-
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-xs-12 col-sm-8 mx-auto">
@@ -21,15 +19,18 @@
         </ul>
       </div>
 
-      <div class="col-xs-12 col-sm-8 mt-5">
-        <ul class="list-group mb-3">
-          <% if @bookings_as_owner.any? %>
-            <h2 class="title-dashboard">Vos vans en location</h2>
-            <% @bookings_as_owner.each do |booking| %>
-              <%= render booking, booking: booking, booking_type: "owner" %>
-            <% end %>
+    <div class="col-xs-12 col-sm-10 mt-5">
+      <h2 class="title-dashboard">Vos vans</h1>
+      <ul class="list-group mb-3">
+        <% @bookings_as_owner.each do |booking| %>
+          <%= render booking, booking: booking, booking_type: "owner" %>
+        <% end %>
+        <% if @available_vans.any? %>
+          <% @available_vans.each do |van| %>
+          <%= render 'vans/available_vans', van: van %>
           <% end %>
-        </ul>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
