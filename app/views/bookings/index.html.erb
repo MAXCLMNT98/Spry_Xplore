@@ -4,7 +4,9 @@
       <h1 class="title-dashboard">Vos réservations de vans</h1>
       <ul class="list-group mb-3">
         <% @bookings_as_visitor.each do |booking| %>
+          <%= link_to booking_path(booking), class: "plain" do %>
           <%= render booking, booking: booking, booking_type: "visitor" %>
+          <% end %>
         <% end %>
       </ul>
     </div>
