@@ -23,8 +23,9 @@ class BookingsController < ApplicationController
     @van = Van.find(params[:van_id])
     @booking.van = @van
     @booking.status = "En attente"
-    if @booking.save
-      redirect_to "/bookings", notice: "Vous avez réservé un van."
+
+    if @booking.save!
+      redirect_to "/bookings", notice: "Votre réservation de van a été créée et est en attente."
     else
       redirect_to @van, alert: 'Erreur : veuillez verifier la date'
     end
