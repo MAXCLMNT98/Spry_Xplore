@@ -15,6 +15,11 @@
         <% @bookings_as_owner.each do |booking| %>
           <%= render booking, booking: booking, booking_type: "owner" %>
         <% end %>
+        <% if @available_vans.any? %>
+          <% @available_vans.each do |van| %>
+          <%= render 'vans/available_vans', van: van %>
+          <% end %>
+        <% end %>
       </ul>
     </div>
   </div>
