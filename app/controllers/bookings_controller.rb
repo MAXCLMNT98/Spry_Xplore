@@ -6,7 +6,13 @@ class BookingsController < ApplicationController
     @bookings_as_owner = current_user.bookings_as_owner
     @available_vans = current_user.vans.where(status: 'Disponible')
   end
-
+  def show
+    @booking = Booking.find(params[:id])
+    if @booking.nil?
+      redirect_to vans_path, alert: "reservation non trouvé non trouvé."
+    end
+  end
+  
   def new
     @van = Van.find(params[:van_id])
     @booking = Booking.new
