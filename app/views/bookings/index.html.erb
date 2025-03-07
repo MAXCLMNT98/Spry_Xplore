@@ -10,7 +10,7 @@
     </div>
 
     <div class="col-xs-12 col-sm-10 mt-5">
-      <h1 class="title-dashboard">Vos vans loués</h1>
+      <h1 class="title-dashboard">Vos vans</h1>
       <ul class="list-group mb-3">
         <% @bookings_as_owner.each do |booking| %>
           <%= render booking, booking: booking, booking_type: "owner" %>
