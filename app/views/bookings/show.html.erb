@@ -1,30 +1,31 @@
 <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <h2><%= booking.van.model %></h2>
-        <% if booking.van.photo.attached? %>
+        <h2><%= @booking.van.model %></h2>
+        <% if @booking.van.photo.attached? %>
           <%= cl_image_tag booking.van.photo.key, class: "van-img img-fluid rounded resize"%>
-        <% elsif @van.image_url.present? %>
-          <img src="<%= booking.van.image_url %>"  class="van-img img-fluid rounded resize" alt="van">
+        <% elsif @booking.van.image_url.present? %>
+          <img src="<%= @booking.van.image_url %>"  class="van-img img-fluid rounded resize" alt="van">
         <% else %>
           <img src="https://res.cloudinary.com/dexzpdaju/image/upload/v1741106361/vw_hdryrk.webp" class="van-img img-fluid rounded resize">
         <% end %>
-          <p><strong>Carburant :</strong> <%= booking.van.fuel %></p>
-          <p><strong>Prix :</strong> <%= booking.van.price %>€ par jour</p>
-          <% if @van.surface? %>
-            <p><strong>Superficie :</strong> <%= booking.van.surface %>㎡</p>
+          <p><strong>Carburant :</strong> <%= @booking.van.fuel %></p>
+          <p><strong>Prix :</strong> <%= @booking.van.price %>€ par jour</p>
+          <% if @booking.van.surface? %>
+            <p><strong>Superficie :</strong> <%= @booking.van.surface %>㎡</p>
           <% end %>
       </div>
       <div class="col-md-6 d-flex ">
         <div class="flex-grow-1">
           <h3 class="text-center mb-3">Détails de votre voyage</h3>
-          <%= f.input :start_date, label: "Date de début" %>
-            <%= f.input_field :start_date, value: @booking.start_date, readonly: true %>
+          <%= simple_form_for([@van, @booking]) do |f| %>
+          <label>Date de debut</label>
+        <input type="text" value="<%= @booking.start_date.strftime("%-d %B %Y") %>" readonly class="form-control">
 
-          <%= f.input :end_date, label: "Date de fin" %>
-            <%= f.input_field :end_date, value: @booking.end_date, readonly: true %>
+        <label>Date de fin</label>
+        <input type="text" value="<%= @booking.end_date %>" readonly class="form-control">
         <div class="status">Statut : <%= @booking.status %></div>
-
+        <% end %>
           <div data-controller="toggle" class="mt-5 map-container">
   <button class="btn btn-flat btn-map" data-action="click->toggle#fire"><span>Voir la carte</span>
   <img src="https://res.cloudinary.com/dexzpdaju/image/upload/v1741184289/icons8-carte-30_sx5vze.png" alt="icon-map">
