@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     end
     @markers = [
       {
-        lat: @booking.van.latitude, lng: @booking.van.longitude,
+        lat: @booking.van.latitude, lng: @booking.van.longitude
       }
     ]
   end
