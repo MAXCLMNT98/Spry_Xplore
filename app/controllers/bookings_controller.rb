@@ -5,7 +5,13 @@ class BookingsController < ApplicationController
     @bookings_as_visitor = current_user.bookings_as_visitor
     @bookings_as_owner = current_user.bookings_as_owner
   end
-
+  def show
+    @booking = Booking.find(params[:id])
+    if @booking.nil?
+      redirect_to vans_path, alert: "reservation non trouvé non trouvé."
+    end
+  end
+  
   def new
     @van = Van.find(params[:van_id])
     @booking = Booking.new
@@ -17,10 +23,11 @@ class BookingsController < ApplicationController
     @van = Van.find(params[:van_id])
     @booking.van = @van
     @booking.status = "En attente"
+
     if @booking.save!
-      redirect_to "/bookings", notice: "Vous avez réservé un van."
+      redirect_to "/bookings", notice: "Votre réservation de van a été créée et est en attente."
     else
-      render :new, status: :unprocessable_entity
+      redirect_to @van, alert: 'Erreur : veuillez verifier la date'
     end
   end
 
