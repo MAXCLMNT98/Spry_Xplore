@@ -6,7 +6,7 @@ class VansController < ApplicationController
       {
         lat: van.latitude,
         lng: van.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {van: van})
+        info_window_html: render_to_string(partial: "info_window", locals: { van: van })
       }
     end
   end
@@ -17,6 +17,12 @@ class VansController < ApplicationController
     if @van.nil?
       redirect_to vans_path, alert: "Van non trouvé."
     end
+    @markers = [
+      {
+        lat: @van.latitude, lng: @van.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { van: @van })
+      }
+    ]
   end
 
   def new
