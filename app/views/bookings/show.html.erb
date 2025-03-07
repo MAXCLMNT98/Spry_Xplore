@@ -19,14 +19,14 @@
         <div class="flex-grow-1">
           <h3 class="text-center mb-3">Détails de votre voyage</h3>
           <%= simple_form_for([@van, @booking]) do |f| %>
-          <label>Date de début</label>
-        <input type="text" value="<%= I18n.l(@booking.start_date, format: "%-d %B %Y", locale: :fr) %>" readonly class="form-control">
+          <label class="mb-2"><strong>Date de début</strong></label>
+        <input type="text" value="<%= I18n.l(@booking.start_date, format: "%-d %B %Y", locale: :fr) %>" readonly class="form-control text-center mb-4">
 
-        <label>Date de fin</label>
-        <input type="text" value="<%= I18n.l(@booking.end_date, format: "%-d %B %Y", locale: :fr) %>" readonly class="form-control">
-        <div class="status">Statut : <%= @booking.status %></div>
+        <label class="mb-2"><strong>Date de fin</strong></label>
+        <input type="text" value="<%= I18n.l(@booking.end_date, format: "%-d %B %Y", locale: :fr) %>" readonly class="form-control text-center mb-4">
+        <p><strong>Statut de la réservation : </strong><%= @booking.status %></p>
         <% end %>
-          <div data-controller="toggle" class="mt-5 map-container">
+          <div data-controller="toggle" class="mt-4 map-container">
   <button class="btn btn-flat btn-map" data-action="click->toggle#fire"><span>Voir la carte</span>
   <img src="https://res.cloudinary.com/dexzpdaju/image/upload/v1741184289/icons8-carte-30_sx5vze.png" alt="icon-map">
   </button>
